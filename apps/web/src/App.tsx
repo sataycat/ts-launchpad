@@ -1,35 +1,16 @@
-import { useState } from "react";
-import viteLogo from "/vite.svg";
-import reactLogo from "./assets/react.svg";
+import "@mantine/core/styles.css";
 
-import "./App.css";
+import { Center, MantineProvider } from "@mantine/core";
+import { ContactUs } from "~/modules/contact-us/components/ContactUs";
 
 function App() {
-  const [count, setCount] = useState(1);
-
+  // probably want to put a router instead of components in this file
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button type="button" onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <MantineProvider>
+      <Center mih={700}>
+        <ContactUs />
+      </Center>
+    </MantineProvider>
   );
 }
 
