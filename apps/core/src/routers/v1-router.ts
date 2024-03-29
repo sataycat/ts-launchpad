@@ -1,6 +1,16 @@
-import { isEven } from "@local/lib";
-import type { FastifyPluginAsync } from "fastify";
+import { contract } from "@local/lib";
 
-export const v1Router: FastifyPluginAsync = async (fastify, _options) => {
-  fastify.get("/balls", () => isEven(2));
-};
+import { initServer } from "@ts-rest/fastify";
+
+const s = initServer();
+
+export const v1Router = s.plugin(
+  s.router(contract, {
+    createEnquiry: async ({ body }) => {
+      return {
+        status: 201,
+        body,
+      };
+    },
+  }),
+);

@@ -7,3 +7,4 @@ export const isEven = (input: unknown): boolean => {
 };
 
 export * from "./schemas/enquiry.schema";
+export * from "./contract";

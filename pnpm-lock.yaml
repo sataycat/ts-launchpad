@@ -23,6 +23,9 @@ importers:
       '@local/lib':
         specifier: workspace:*
         version: link:../../packages/lib
+      '@ts-rest/fastify':
+        specifier: ^3.37.0
+        version: 3.37.0(fastify@4.26.1)
       dotenv-flow:
         specifier: ^4.1.0
         version: 4.1.0
@@ -932,6 +935,18 @@ packages:
         optional: true
     dependencies:
       zod: 3.22.4
+    dev: false
+
+  /@ts-rest/fastify@3.37.0(fastify@4.26.1):
+    resolution: {integrity: sha512-dcD2eec9oOGIeCmS9S2kl8ck4xmm8jwsGlsM80AiBF7MxMyRb3x6mb2WzJApi+Lifopvq5ae5evXVUqD0hu4UQ==}
+    peerDependencies:
+      fastify: ^4.0.0
+      zod: ^3.22.3
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      fastify: 4.26.1
     dev: false
 
   /@types/babel__core@7.20.5:

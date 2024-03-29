@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@local/lib": "workspace:*",
+    "@ts-rest/fastify": "^3.37.0",
     "dotenv-flow": "^4.1.0",
     "envalid": "^8.0.0",
     "fastify": "^4.26.1"
