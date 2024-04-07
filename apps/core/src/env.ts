@@ -7,6 +7,6 @@ export const env = cleanEnv(process.env, {
   PORT: port(),
   NODE_ENV: str({
     choices: ["development", "test", "production"],
-    default: "development",
+    default: "production",
   }),
 });

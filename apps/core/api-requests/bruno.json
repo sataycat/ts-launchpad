@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "bruno",
+  "name": "ts-launchpad-requests",
   "type": "collection",
   "ignore": ["node_modules", ".git"]
 }
