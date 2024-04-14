@@ -1,0 +1,7 @@
+.input {
+  &[data-error] {
+    &::placeholder {
+      color: var(--mantine-color-red-2);
+    }
+  }
+}

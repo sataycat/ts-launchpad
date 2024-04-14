@@ -1,16 +1,23 @@
+import { Center, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 
-import { Center, MantineProvider } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
+import "@mantine/notifications/styles.css";
+
+import { QueryClientProvider } from "@tanstack/react-query";
 import { ContactUs } from "~/modules/contact-us/components/ContactUs";
+import { queryClient } from "./services/queryClient";
 
 function App() {
-  // probably want to put a router instead of components in this file
   return (
-    <MantineProvider>
-      <Center mih={700}>
-        <ContactUs />
-      </Center>
-    </MantineProvider>
+    <QueryClientProvider client={queryClient}>
+      <MantineProvider>
+        <Notifications />
+        <Center mih={700}>
+          <ContactUs />
+        </Center>
+      </MantineProvider>
+    </QueryClientProvider>
   );
 }
 

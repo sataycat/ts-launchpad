@@ -1,16 +1,21 @@
 import { Enquiry } from "@local/lib";
+
 import { Button, Group, Paper } from "@mantine/core";
+
 import { FormProvider } from "react-hook-form";
-import { ControlledTextField } from "~/components/inputs/ControlledTextInput.tsx";
+
+import { ControlledTextField } from "~/modules/common/components/inputs/ControlledTextInput";
+import { ControlledTextarea } from "~/modules/common/components/inputs/ControlledTextarea";
+
 import { useContactUsForm } from "../hooks/useContactUsForm";
 
-import { ControlledTextarea } from "~/components/inputs/ControlledTextarea.tsx";
 export const ContactUsForm = () => {
   const { formMethods, onSubmit } = useContactUsForm();
+
   return (
     <Paper withBorder shadow="md" p={30} mt={30} radius="md">
       <FormProvider {...formMethods}>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} noValidate>
           <ControlledTextField<Enquiry>
             name="email"
             textInputProps={{
@@ -36,7 +41,6 @@ export const ContactUsForm = () => {
               mt: "md",
             }}
           />
-
           <Group justify="flex-end" mt="md">
             <Button type="submit">Send message</Button>
           </Group>

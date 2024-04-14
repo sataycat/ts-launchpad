@@ -1,4 +1,4 @@
-import { TextInput, TextInputProps } from "@mantine/core";
+import { Textarea, TextareaProps } from "@mantine/core";
 import { capitalize } from "radash";
 import {
   Controller,
@@ -7,18 +7,19 @@ import {
   UseControllerProps,
   useFormContext,
 } from "react-hook-form";
+import classes from "./InputStyles.module.css";
 
-type ControlledTextFieldProps<T extends FieldValues> = {
+type ControlledTextareaProps<T extends FieldValues> = {
   name: FieldPath<T>;
   rules?: UseControllerProps<T>["rules"];
-  textInputProps?: TextInputProps;
+  textAreaProps?: TextareaProps;
 };
 
-export const ControlledTextField = <T extends FieldValues>({
+export const ControlledTextarea = <T extends FieldValues>({
   name,
   rules,
-  textInputProps = {},
-}: ControlledTextFieldProps<T>) => {
+  textAreaProps = {},
+}: ControlledTextareaProps<T>) => {
   const { control } = useFormContext<T>();
 
   return (
@@ -27,11 +28,12 @@ export const ControlledTextField = <T extends FieldValues>({
       control={control}
       rules={rules}
       render={({ field, fieldState: { error } }) => (
-        <TextInput
+        <Textarea
+          classNames={{ input: classes.input }}
           error={error?.message}
           label={capitalize(name)}
           {...field}
-          {...textInputProps}
+          {...textAreaProps}
         />
       )}
     />

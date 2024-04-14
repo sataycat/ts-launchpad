@@ -1,6 +1,7 @@
 import { contract } from "@local/lib";
 import { createExpressEndpoints } from "@ts-rest/express";
 import { generateOpenApi } from "@ts-rest/open-api";
+import cors from "cors";
 import express from "express";
 import { pinoHttp } from "pino-http";
 import * as swaggerUi from "swagger-ui-express";
@@ -16,6 +17,7 @@ const openApiDocument = generateOpenApi(contract, {
 export function createApp() {
   const app = express();
 
+  app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
   app.use(pinoHttp());
