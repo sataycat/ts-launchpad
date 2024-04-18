@@ -36,3 +36,4 @@ Thumbs.db
 
 .env.local
 .env.*.local
+sqlite.db

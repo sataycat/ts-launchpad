@@ -1,4 +1,4 @@
-import { Enquiry } from "@local/lib";
+import { CreateEnquiry } from "@local/lib";
 
 import { Button, Group, Paper } from "@mantine/core";
 
@@ -16,21 +16,21 @@ export const ContactUsForm = () => {
     <Paper withBorder shadow="md" p={30} mt={30} radius="md">
       <FormProvider {...formMethods}>
         <form onSubmit={onSubmit} noValidate>
-          <ControlledTextField<Enquiry>
+          <ControlledTextField<CreateEnquiry>
             name="email"
             textInputProps={{
               placeholder: "your@email.com",
               required: true,
             }}
           />
-          <ControlledTextField<Enquiry>
+          <ControlledTextField<CreateEnquiry>
             name="name"
             textInputProps={{
               placeholder: "John Doe",
               mt: "md",
             }}
           />
-          <ControlledTextarea<Enquiry>
+          <ControlledTextarea<CreateEnquiry>
             name="message"
             textAreaProps={{
               required: true,

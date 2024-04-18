@@ -6,8 +6,8 @@ export function ContactUs() {
   return (
     <Container>
       <Text>
-        This form uses the zod schema <Code>enquirySchema</Code> to validate
-        input.
+        This form uses the zod schema <Code>createEnquirySchema</Code> to
+        validate input.
       </Text>
       <ContactUsForm />
     </Container>

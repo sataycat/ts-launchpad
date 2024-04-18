@@ -4,15 +4,16 @@ import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
 import { api } from "~/services/api";
 
-import { Enquiry, enquirySchema } from "@local/lib";
+import { CreateEnquiry, createEnquirySchema } from "@local/lib";
 
 export const useContactUsForm = () => {
   const { mutate } = useMutation({
-    mutationFn: (enquiry: Enquiry) => api.createEnquiry({ body: enquiry }),
+    mutationFn: (enquiry: CreateEnquiry) =>
+      api.createEnquiry({ body: enquiry }),
   });
 
   const formMethods = useForm({
-    resolver: zodResolver(enquirySchema),
+    resolver: zodResolver(createEnquirySchema),
     defaultValues: { email: "", message: "" },
   });
 

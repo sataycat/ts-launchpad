@@ -1,11 +1,14 @@
-import { Enquiry } from "@local/lib";
+import { CreateEnquiry, Enquiry } from "@local/lib";
+import { db } from "~/db/db";
+import { enquries } from "~/db/schema";
 
 export const createEnquiry = async (
-  data: Enquiry,
+  data: CreateEnquiry,
 ): Promise<{ status: 201; body: Enquiry }> => {
-  // TODO Actually create here
+  const created = await db.insert(enquries).values(data).returning();
+
   return {
     status: 201,
-    body: data,
+    body: created[0],
   };
 };

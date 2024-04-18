@@ -1,5 +1,5 @@
 import { initContract } from "@ts-rest/core";
-import { enquirySchema } from "./schemas/enquiry.schema";
+import { Enquiry, createEnquirySchema } from "./schemas/enquiry.schema";
 
 const c = initContract();
 
@@ -9,9 +9,16 @@ export const contract = c.router(
       method: "POST",
       path: "/enquiry",
       responses: {
-        201: enquirySchema,
+        201: c.type<Enquiry>(),
       },
-      body: enquirySchema,
+      body: createEnquirySchema,
+    },
+    listEnquiries: {
+      method: "GET",
+      path: "/enquiry",
+      responses: {
+        200: c.type<Enquiry[]>(),
+      },
     },
   },
   { pathPrefix: "/api/v1" },
