@@ -5,7 +5,7 @@ import { Notifications } from "@mantine/notifications";
 import "@mantine/notifications/styles.css";
 
 import { QueryClientProvider } from "@tanstack/react-query";
-import { ContactUs } from "~/modules/contact-us/components/ContactUs";
+import { Router } from "./Router";
 import { queryClient } from "./services/queryClient";
 
 function App() {
@@ -13,9 +13,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <MantineProvider>
         <Notifications />
-        <Center mih={700}>
-          <ContactUs />
-        </Center>
+        <Router />
       </MantineProvider>
     </QueryClientProvider>
   );

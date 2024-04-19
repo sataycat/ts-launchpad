@@ -1,7 +1,7 @@
 {
   "version": "5",
   "dialect": "sqlite",
-  "id": "0e2b635e-d4bd-461d-832f-7f706919c9d6",
+  "id": "2bb1e5c5-57a1-4e0e-8e9f-ce3d7f245b9a",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "tables": {
     "enquries": {
@@ -16,6 +16,13 @@
         },
         "email": {
           "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "message": {
+          "name": "message",
           "type": "text",
           "primaryKey": false,
           "notNull": true,
