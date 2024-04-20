@@ -1,4 +1,4 @@
-import { Enquiry } from "@local/lib";
+import type { Enquiry } from "@local/lib";
 import { db } from "~/db/db";
 
 export const listEnquiries = async (): Promise<{

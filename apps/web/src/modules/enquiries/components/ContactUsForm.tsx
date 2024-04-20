@@ -1,4 +1,4 @@
-import { CreateEnquiry } from "@local/lib";
+import type { CreateEnquiry } from "@local/lib";
 
 import { Button, Group, Paper } from "@mantine/core";
 

@@ -1,4 +1,4 @@
-import { CreateEnquiry, Enquiry } from "@local/lib";
+import type { CreateEnquiry, Enquiry } from "@local/lib";
 import { db } from "~/db/db";
 import { enquries } from "~/db/schema";
 

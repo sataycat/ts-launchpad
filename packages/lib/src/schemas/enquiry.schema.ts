@@ -1,5 +1,5 @@
 import * as z from "zod";
-import { OptionalToNull } from "../utils";
+import type { OptionalToNull } from "../utils";
 
 export const createEnquirySchema = z.object({
   email: z.string().email(),

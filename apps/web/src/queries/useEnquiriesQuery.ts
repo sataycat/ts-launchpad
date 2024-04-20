@@ -1,4 +1,4 @@
-import { Enquiry } from "@local/lib";
+import type { Enquiry } from "@local/lib";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "~/services/api";
 

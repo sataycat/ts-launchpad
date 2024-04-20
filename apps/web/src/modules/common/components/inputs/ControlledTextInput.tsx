@@ -1,10 +1,10 @@
-import { TextInput, TextInputProps } from "@mantine/core";
+import { TextInput, type TextInputProps } from "@mantine/core";
 import { capitalize } from "radash";
 import {
   Controller,
-  FieldPath,
-  FieldValues,
-  UseControllerProps,
+  type FieldPath,
+  type FieldValues,
+  type UseControllerProps,
   useFormContext,
 } from "react-hook-form";
 import classes from "./InputStyles.module.css";

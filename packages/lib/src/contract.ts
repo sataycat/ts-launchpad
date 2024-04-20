@@ -1,5 +1,5 @@
 import { initContract } from "@ts-rest/core";
-import { Enquiry, createEnquirySchema } from "./schemas/enquiry.schema";
+import { type Enquiry, createEnquirySchema } from "./schemas/enquiry.schema";
 
 const c = initContract();
 

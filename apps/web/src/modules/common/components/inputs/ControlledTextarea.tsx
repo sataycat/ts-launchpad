@@ -1,10 +1,10 @@
-import { Textarea, TextareaProps } from "@mantine/core";
+import { Textarea, type TextareaProps } from "@mantine/core";
 import { capitalize } from "radash";
 import {
   Controller,
-  FieldPath,
-  FieldValues,
-  UseControllerProps,
+  type FieldPath,
+  type FieldValues,
+  type UseControllerProps,
   useFormContext,
 } from "react-hook-form";
 import classes from "./InputStyles.module.css";
